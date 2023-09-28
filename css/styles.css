@@ -200,8 +200,9 @@ h6 {
 /*Main*/
 /*section 1*/
 .section-hero {
+  margin: 0 auto;
   background-color: var(--c-background-hero);
-  padding: 188px 0;
+  /*padding: 188px 0;*/
   list-style: none;
   justify-content: center;
   background-image: linear-gradient(
@@ -209,7 +210,12 @@ h6 {
       rgba(46, 47, 66, 0.7)
     ),
     url(../images/people-office.jpg);
-  max-width: 1440px;
+  /*max-width: 1440px;*/
+  width: 100%;
+  max-width: 320px; 
+  height: 100%;
+ 
+  padding: 72px 16px 72px 16px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -217,13 +223,17 @@ h6 {
 
 .hero-title {
   margin: 0 auto;
-  margin-bottom: 48px;
-  max-width: 496px;
+ /* margin-bottom: 48px;*/
+ margin-bottom: 72px;
+  /*max-width: 496px;*/
+  max-width: 200px;
   color: var(--c-white);
-  font-size: 56px;
+  /*font-size: 56px;*/
+  font-size: 36px;
   font-style: normal;
   font-weight: 700;
-  line-height: 1.07;
+  /*line-height: 1.07;*/
+  line-height: 1.11;
   text-align: center;
   letter-spacing: 0.02em;
 }
@@ -568,14 +578,13 @@ font-weight: 500;
 /*Modal*/
 
 .backdrop {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  padding: 20px;
+  position: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: fixed;
+  opacity: 0;
+  visibility: hidden;
+  padding: 8px 16px;
   inset: 0;
   background-color: var(--NAVY-BLUE-modal, rgba(46, 47, 66, 0.4));
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -587,23 +596,27 @@ font-weight: 500;
   pointer-events: auto;
 }
 .modal {
-  position: absolute;
-  top: 50%;
+  position: relative;
+  margin: auto;
+  /*top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(1);
+  transform: translate(-50%, -50%) scale(1);*/
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  padding: 72px 24px 24px;
-  min-height: 584px;
-  background-color: var(--c-background-modal);
-  border-radius: 4px;
-  max-width: 408px;
   height: 100%;
   width: 100%;
-  max-height: 584px;
-  flex-shrink: 0;
+  padding: 72px 16px 24px; /* gor pading 24px*/
+  /*min-height: 584px;*/
+  background-color: var(--c-background-modal);
+  border-radius: 4px;
+  /*max-width: 408px;*/
+  max-width: 320px;
+  max-height: 624px;
+/* flex-shrink: 0;*/
+
 }
+
 .svg-close {
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -693,7 +706,7 @@ font-weight: 500;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   border: 1px solid rgba(46, 47, 66, 0.4);
 }
-
+/*
 .modal-input:hover {
   outline: none;
   border-color: var(--c-background-prymary-brand);
@@ -707,7 +720,7 @@ font-weight: 500;
 }
 .modal-input:focus {
   border-color: var(--c-background-prymary-brand);
-}
+}*/
 .modal-input-wrap {
   position: relative;
 }
@@ -804,20 +817,35 @@ font-weight: 500;
 .container {
   max-width: 320px;
 }
+
 .team-name {
   max-width: 260px;
 }
 .advantage-item {
   max-width: 320px;
-
 }
-  
+.modal {
+  max-width: 320px;
+  margin: auto;
+}
 }
 
 
 @media screen and (min-width: 768px) {
   .container {
     max-width: 768px;
+  }
+  .section-hero {
+    max-width: 768px;
+    padding-bottom: 112px;
+    padding-top: 112px;
+  }
+  .hero-title {
+    max-width: 496px;
+    max-height: 120px;
+    font-size: 56px;
+    line-height: 1.07;
+    margin-bottom: 36px;
   }
   .photofon {
    flex-basis: calc((100% - 24px) / 2);
@@ -861,13 +889,35 @@ font-weight: 500;
   .footer-input {
     width: 264px;
   }
+  .backdrop {
+    padding-top: 96px;
+  }
+  .modal {
+    padding-left: 24px;
+    padding-right: 24px;
+    max-width: 408px;
+    max-height: 584px;
+   margin-top: 0px;
+   margin-bottom: 0px;
+  }
 }
+
+
 @media screen and (min-width: 1158px) {
-  .container {
+ 
+  .section-hero {
+    max-width: 1140px;
+    padding-top: 188px;
+    padding-bottom: 188px;
+  } .container {
     max-width: 1158px;
     padding-left: 15px;
     padding-right: 15px;
   }
+
+.hero-title {
+  margin-bottom: 48px;
+}
   .photofon {
    flex-basis: calc((100% - 72px) / 4);
   }
@@ -932,6 +982,27 @@ font-weight: 500;
   .div-footer {
  margin-right: 120px;
  padding-left: 0;
+}
+.backdrop {
+  padding-top: 80px;
+}
+.modal {
+  max-width: 408px;
+  max-height: 584px;
+}
+.modal-input:hover {
+  outline: none;
+  border-color: var(--c-background-prymary-brand);
+}
+.modal-input:hover + .icon-contact {
+  fill: var(--c-background-prymary-brand);
+}
+.modal-input:focus + .icon-contact {
+  fill: var(--c-background-prymary-brand);
+  outline: none;
+}
+.modal-input:focus {
+  border-color: var(--c-background-prymary-brand);
 }
 }
 /*END @media momile}
