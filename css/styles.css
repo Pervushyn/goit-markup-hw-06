@@ -706,7 +706,7 @@ font-weight: 500;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   height: 100%;
   width: 100%;
-  padding: 72px 16px 24px; /* gor pading 24px*/
+  padding: 72px 16px 10px; /* gor pading 24px*/
   /*min-height: 584px;*/
   background-color: var(--c-background-modal);
   border-radius: 4px;
@@ -881,14 +881,15 @@ gap: 8px;
 }
 
 .modal-checkbox-check {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 0;
   margin: 0;
-  border: none;
   fill: var(--c-cloud);
+  background-color: var(--c-cloud);
   min-width: 16px;
   min-height: 16px;
-  fill: transparent;
   border-radius: 2px;
   border: 1px solid rgba(46, 47, 66, 0.4);
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -905,7 +906,7 @@ gap: 8px;
   line-height: 1.17;
   letter-spacing: 0.04em;
 }
-.modal-check-input:checked + .text-policy .modal-checkbox-check {
+.modal-check-input:checked + .modal-checkbox-check {
   background-color: var(--c-background-ocean);
   border: 1px solid var(--c-border);
   border-radius: 2px;
@@ -1027,6 +1028,10 @@ letter-spacing: 0.02em;
   .hero-title {
     text-transform: capitalize;
    }
+   .modal {
+    overflow-y: auto;
+   }
+ 
   
 }
 
