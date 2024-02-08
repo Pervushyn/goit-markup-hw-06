@@ -345,7 +345,7 @@ h6 {
   flex-wrap: wrap;
   gap: 24px;
   row-gap: 72px;
-  flex-basis: 100%;
+ 
 }
 .icon-hidden {
   display: none;
@@ -978,7 +978,9 @@ letter-spacing: 0.02em;
     height: 40px;
   }
 
- 
+ .is-hidden {
+  display: none;
+ }
 
 /*END Menu container */
 
@@ -1209,7 +1211,6 @@ letter-spacing: 0.02em;
   .advantages-icons {
     display: flex;
     gap: 24px;
-    width: calc((100% - 72px) / 4);
   }
   .section-footer {
     padding-top: 100px;
